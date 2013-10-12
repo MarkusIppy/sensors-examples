@@ -85,6 +85,7 @@ public:
         out << QString("Acceleration: %1 x").arg(reading->x(), 5, 'f', 1)
                 << QString(" %1 y").arg(reading->y(), 5, 'f', 1)
                 << QString(" %1 z m/s^2").arg(reading->z(), 5, 'f', 1)
+                << stamp
                 << QString(" (%1 ms since last, %2 Hz)").arg(diff / 1000, 4).arg( fq, 5, 'f', 1) << endl;
 
         if (dataRate>0){
@@ -112,7 +113,9 @@ int main(int argc, char **argv)
         rate_val = args.at(rate_place + 1).toInt();
     QAccelerometer sensor;
     sensor.connectToBackend();
-    sensor.setProperty("alwaysOn",true);
+    if (args.indexOf("-a") > 0) {
+        sensor.setProperty("alwaysOn",true);
+    }
 
     if (rate_val > 0) {
         sensor.setDataRate(rate_val);

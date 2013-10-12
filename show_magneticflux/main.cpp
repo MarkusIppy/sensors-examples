@@ -123,7 +123,7 @@ int main(int argc, char **argv)
     int bufferSize = buffer_place!=-1? args.at(buffer_place + 1).toInt():1;
     geosensor.setProperty("bufferSize",bufferSize);
 
-    MagGeoFilter geofilter;
+ /*   MagGeoFilter geofilter;
     geosensor.setProperty("returnGeoValues", true);
     geosensor.addFilter(&geofilter);
     geosensor.start();
@@ -131,7 +131,7 @@ int main(int argc, char **argv)
         qWarning("Magnetometersensor (geo) didn't start!");
         return 1;
     }
-
+*/
     QMagnetometer rawsensor;
     rawsensor.connectToBackend();
     if (rate_val > 0) {
