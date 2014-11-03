@@ -79,6 +79,9 @@ int main(int argc, char **argv)
         rate_val = args.at(rate_place + 1).toInt();
     QOrientationSensor sensor;
     sensor.connectToBackend();
+    if (args.indexOf("-a") > 0) {
+        sensor.setProperty("alwaysOn",true);
+    }
 
     if (rate_val > 0) {
         sensor.setDataRate(rate_val);

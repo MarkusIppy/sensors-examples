@@ -113,6 +113,9 @@ int main(int argc, char **argv)
 
     QMagnetometer geosensor;
     geosensor.connectToBackend();
+    if (args.indexOf("-a") > 0) {
+        geosensor.setProperty("alwaysOn",true);
+    }
 
     if (rate_val > 0) {
         geosensor.setDataRate(rate_val);
@@ -134,6 +137,9 @@ int main(int argc, char **argv)
 */
     QMagnetometer rawsensor;
     rawsensor.connectToBackend();
+    if (args.indexOf("-a") > 0) {
+        rawsensor.setProperty("alwaysOn",true);
+    }
     if (rate_val > 0) {
         rawsensor.setDataRate(rate_val);
         check::checkRate(&rawsensor, rate_val);

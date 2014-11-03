@@ -130,6 +130,8 @@ int main(int argc, char **argv)
 
     AccelerometerFilter filter(rate_val);
     sensor.addFilter(&filter);
+    qDebug() << "choosing" << sensor.identifier();
+    sleep(2);
     sensor.start();
     if (!sensor.isActive()) {
         qWarning("Accelerometersensor didn't start!");
