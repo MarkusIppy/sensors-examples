@@ -50,7 +50,8 @@ public:
 
     bool filter(QSensorReading *reading)
     {
-        qDebug()<<"reflectance "<<QString("%1").arg(reading->property("reflectance").toFloat(),2,'f',1)<<" %";
+        qDebug()<< "reflectance "<< reading->property("reflectance")
+               << QString("%1").arg(reading->property("reflectance").toFloat(),2,'f',1)<<" %";
         return false;
     }
 };

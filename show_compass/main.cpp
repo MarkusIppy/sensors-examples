@@ -77,6 +77,9 @@ int main(int argc, char **argv)
     if (rate_val > 0) {
         sensor.setDataRate(rate_val);
     }
+    if (args.indexOf("-a") > 0) {
+        sensor.setProperty("alwaysOn",true);
+    }
     CompassFilter filter;
     sensor.addFilter(&filter);
     sensor.start();
