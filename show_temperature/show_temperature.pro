@@ -10,3 +10,5 @@ CONFIG -= app_bundle
 TEMPLATE = app
 
 SOURCES += main.cpp
+target.path = /usr/bin
+INSTALLS += target
