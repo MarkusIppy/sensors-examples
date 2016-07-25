@@ -40,6 +40,7 @@
 
 #include <QtCore>
 #include <qaccelerometer.h>
+#include <unistd.h>
 
 QT_USE_NAMESPACE
 
