@@ -1,6 +1,7 @@
 TEMPLATE = subdirs
 SUBDIRS += show_acceleration \
     show_als \
+    show_altimeter \
     show_compass \
     show_gyroscope \
     show_light \
