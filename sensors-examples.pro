@@ -12,7 +12,8 @@ SUBDIRS += show_acceleration \
     show_rotation \
     show_tap \
     show_temperature \
-    show_pressure
+    show_pressure \
+    show_humidity
 
 #SUBDIRS += show_holster
 #SUBDIRS += show_distance
